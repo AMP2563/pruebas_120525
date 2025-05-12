@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabaja con nosotros</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .inline-label {
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 15px;
+        }
+        .checkbox-group, .radio-group {
+            margin-top: 10px;
+        }
+        .checkbox-group label,
+        .radio-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 15px;
+            margin-top: 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="reset"] {
+            background-color: #555;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            opacity: 0.7;
+        }
+        footer {
+            max-width: 800px;
+            margin: 40px auto 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;">Formulario de contacto</h1>
+    </header>
+
+    <main>
+        <form method="get" action="">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+
+                <label for="fecha">Fecha de nacimiento:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono de contacto:</label>
+                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+
+                <label>¿Tiene movilidad geográfica?</label>
+                <div class="radio-group">
+                    <input type="radio" id="movilidad_si" name="movilidad" value="sí" required>
+                    <label for="movilidad_si" class="inline-label">Sí</label>
+
+                    <input type="radio" id="movilidad_no" name="movilidad" value="no">
+                    <label for="movilidad_no" class="inline-label">No</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Puestos de trabajo</legend>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="pjr" name="puesto[]" value="Programador junior">
+                    <label for="pjr" class="inline-label">Programador junior</label>
+
+                    <input type="checkbox" id="psr" name="puesto[]" value="Programador senior">
+                    <label for="psr" class="inline-label">Programador senior</label>
+
+                    <input type="checkbox" id="analista" name="puesto[]" value="Analista">
+                    <label for="analista" class="inline-label">Analista</label>
+
+                    <input type="checkbox" id="tecnico" name="puesto[]" value="Técnico de sistemas">
+                    <label for="tecnico" class="inline-label">Técnico de sistemas</label>
+                </div>
+
+                <label for="disponibilidad">Disponibilidad horaria:</label>
+                <select id="disponibilidad" name="disponibilidad" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="media jornada">Media jornada</option>
+                    <option value="jornada completa">Jornada completa</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Carta de presentación</legend>
+                <label for="carta">Carta de presentación:</label>
+                <textarea id="carta" name="carta" rows="5"></textarea>
+
+                <label for="cv">Adjuntar CV:</label>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+            </fieldset>
+
+            <fieldset>
+                <legend>Consentimientos</legend>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consentimiento" name="consentimiento" checked required>
+                    <label for="consentimiento" class="inline-label">Consiento el tratamiento de los datos personales</label><br>
+
+                    <input type="checkbox" id="info_grupo" name="info_grupo">
+                    <label for="info_grupo" class="inline-label">Deseo recibir información del grupo empresarial</label>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Enviar formulario">
+            <input type="reset" value="Borrar contenido">
+        </form>
+    </main>
+
+    <footer>
+        <p>Empresa XYZ S.A. - Todos los derechos reservados. Contacto: info@empresa.xyz</p>
+    </footer>
+</body>
+</html>
